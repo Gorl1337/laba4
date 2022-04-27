@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Kanak\Desktop\vector\laba4\build\CMakeFiles\f5a4a04bdd9514103cba40d0452a9793\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{CCD938A4-0F34-3ED8-A973-078099142595}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
