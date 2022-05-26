@@ -1,4 +1,4 @@
-C:/Users/Kanak/Desktop/vector/laba4/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/Kanak/Desktop/vector/laba4/build/CMakeFiles/ZERO_CHECK.dir
-C:/Users/Kanak/Desktop/vector/laba4/build/vector/CMakeFiles/vector.dir
-C:/Users/Kanak/Desktop/vector/laba4/build/vectorlib/CMakeFiles/vectorlib.dir
+C:/Users/Kanak/Desktop/vector2/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Kanak/Desktop/vector2/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Kanak/Desktop/vector2/build/vector/CMakeFiles/vector.dir
+C:/Users/Kanak/Desktop/vector2/build/vectorlib/CMakeFiles/vectorlib.dir

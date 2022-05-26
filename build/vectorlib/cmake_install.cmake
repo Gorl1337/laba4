@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Kanak/Desktop/vector/laba4/vectorlib
+# Install script for directory: C:/Users/Kanak/Desktop/vector2/vectorlib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

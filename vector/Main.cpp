@@ -2,49 +2,60 @@
 #include "Vector.h"
 #include "Matrix.h"
 int main()
-{
-	TVector<int> a(5, 5);
-	TVector<double> b(10, 3.5);
-	TVector<char> c(10, 'a');
-	TVector<int> A(5, 3);
-	TVector<int> res(10, 0);
-	TVector<double> k(10, 5.5);
-	TVector<double> n(10, 0);
+{	
+	TVector<int> A(3, 0);
+	TVector<int> B(3, 0);
+	TVector<int> C(3, 0);
+	int a = 0;
 
-	n = k + b;
-	std::cout << n;
+	std::cin >> A >> B;
+	std::cout << std::endl;
 
-	A = A - a;
-	std::cout << A;
+	C = A + B;
+	std::cout << "A + B = " << C << std::endl;
 
-	A = A / a;
-	std::cout << std::endl << A;
+	A.SetTransp(true);
+	std::cout << "Vector A is now transposed" << std::endl;
+	a = A * B;
+	std::cout << "A * B = " << a << std::endl << std::endl;
 
-	A.Transp();
-	std::cout << A;
+	std::cout << "Is A = B? ->" << (A == B) << std::endl << std::endl;
 
-	res = A * a;
-	std::cout << res;
+	C = A / B;
+	std::cout << "A / B = " << C << std::endl;
 
-	std::cout << (A == a) << std::endl;
+	C = C - A;
+	std::cout << "(A / B) - A = " << C << std::endl;
 
+	int i = 0;
+	std::cout << "Print i ";
+	std::cin >> i;
+	std::cout << "A[i] = " << A[i] << std::endl;
 
-	TMatrix<int> D(2,1);
-	TMatrix<int> C(3,4);
-	for (int i = 0; i < D.GetWidth(); i++)
-		for (int j = 0; j < D.GetLen(); j++)
-			D[i][j] = rand();
-	TMatrix<int> E(D);
-	TMatrix<int> F(3, 4);
-	TMatrix<int> G(F);
-	for (int i = 0; i < F.GetWidth(); i++)
-		for (int j = 0; j < F.GetLen(); j++)
-			F[i][j] = rand();
-	C = F;
-	G.Resize(4, 3);
-	E = G * C;
-	std::cout << D;
-	std::cout << C;
-	std::cout << E;
+	TMatrix<int> m1(3, 3);
+	TMatrix<int> m2(3, 3);
+	TMatrix<int> m3(3, 3);
+
+	for (int j = 0; j < m2.GetLen(); j++)
+		for (int k = 0; k < m2.GetWidth(); k++)
+			m2[j][k] = rand() % 100 + 100;
+	std::cin >> m1;
+
+	m3 = m1 + m2;
+	std::cout << "m1 + m2 = " << std::endl << m3 << std::endl;
+
+	m3 = m1 * m2;
+	std::cout << "m1 * m2 = " << std::endl << m3 << std::endl;
+
+	TVector<int> M(3, 0);
+	M = m1 * A;
+
+	std::cout << "vector A * matrix m1 = " << std::endl;
+	std::cout << M;
+
+	TMatrix<int> N(3, 3);
+	N = m1;
+	std::cout << "N = m1, N = " << std::endl << N;
+
 	return 0;
 }
