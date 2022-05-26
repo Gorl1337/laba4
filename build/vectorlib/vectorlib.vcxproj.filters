@@ -1,30 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\Kanak\Desktop\vector\laba4\vectorlib\Matrix.cpp">
+    <ClCompile Include="C:\Users\Kanak\Desktop\vector2\vectorlib\Matrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Kanak\Desktop\vector\laba4\vectorlib\Vector.cpp">
+    <ClCompile Include="C:\Users\Kanak\Desktop\vector2\vectorlib\Vector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\Kanak\Desktop\vector\laba4\vectorlib\Matrix.h">
+    <ClInclude Include="C:\Users\Kanak\Desktop\vector2\vectorlib\Matrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Kanak\Desktop\vector\laba4\vectorlib\Vector.h">
+    <ClInclude Include="C:\Users\Kanak\Desktop\vector2\vectorlib\Vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Kanak\Desktop\vector\laba4\vectorlib\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\Kanak\Desktop\vector2\vectorlib\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{CDA90808-F950-32B3-9824-C65CD59D97EB}</UniqueIdentifier>
+      <UniqueIdentifier>{1CDF8D88-ACB4-3A8F-876A-ABE980DB5DA0}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{981C5F1D-61E9-3FBE-AA49-3F89E1847E41}</UniqueIdentifier>
+      <UniqueIdentifier>{0EA20577-A773-3CF7-BA3B-335BD44575BA}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

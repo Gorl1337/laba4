@@ -14,7 +14,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{135BE1ED-234F-32DA-A839-7E4FD6C4E576}</ProjectGuid>
+    <ProjectGuid>{3C0D4FAC-D7A4-3FCB-9C9D-B4C41E470C24}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -41,13 +41,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Kanak\Desktop\vector\laba4\build\vector\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Kanak\Desktop\vector2\build\vector\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vector.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vector</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Kanak\Desktop\vector\laba4\build\vector\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Kanak\Desktop\vector2\build\vector\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">vector.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">vector</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
@@ -56,7 +56,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Kanak\Desktop\vector\laba4\vectorlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kanak\Desktop\vector2\vectorlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -73,10 +73,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Kanak\Desktop\vector\laba4\vectorlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kanak\Desktop\vector2\vectorlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Kanak\Desktop\vector\laba4\vectorlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kanak\Desktop\vector2\vectorlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -89,8 +89,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/Kanak/Desktop/vector/laba4/build/vector/Debug/vector.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/Kanak/Desktop/vector/laba4/build/vector/Debug/vector.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/Kanak/Desktop/vector2/build/vector/Debug/vector.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Kanak/Desktop/vector2/build/vector/Debug/vector.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -99,7 +99,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Kanak\Desktop\vector\laba4\vectorlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kanak\Desktop\vector2\vectorlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -116,10 +116,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Kanak\Desktop\vector\laba4\vectorlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kanak\Desktop\vector2\vectorlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Kanak\Desktop\vector\laba4\vectorlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Kanak\Desktop\vector2\vectorlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -132,8 +132,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/Kanak/Desktop/vector/laba4/build/vector/Release/vector.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/Kanak/Desktop/vector/laba4/build/vector/Release/vector.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/Kanak/Desktop/vector2/build/vector/Release/vector.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Kanak/Desktop/vector2/build/vector/Release/vector.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -141,11 +141,11 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Kanak\Desktop\vector\laba4\vector\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\Kanak\Desktop\vector2\vector\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Kanak/Desktop/vector/laba4/vector/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Kanak/Desktop/vector2/vector/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kanak/Desktop/vector/laba4 -BC:/Users/Kanak/Desktop/vector/laba4/build --check-stamp-file C:/Users/Kanak/Desktop/vector/laba4/build/vector/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kanak/Desktop/vector2 -BC:/Users/Kanak/Desktop/vector2/build --check-stamp-file C:/Users/Kanak/Desktop/vector2/build/vector/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -154,11 +154,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Kanak\Desktop\vector\laba4\build\vector\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Kanak\Desktop\vector2\build\vector\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Kanak/Desktop/vector/laba4/vector/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Kanak/Desktop/vector2/vector/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kanak/Desktop/vector/laba4 -BC:/Users/Kanak/Desktop/vector/laba4/build --check-stamp-file C:/Users/Kanak/Desktop/vector/laba4/build/vector/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Kanak/Desktop/vector2 -BC:/Users/Kanak/Desktop/vector2/build --check-stamp-file C:/Users/Kanak/Desktop/vector2/build/vector/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -167,22 +167,22 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Kanak\Desktop\vector\laba4\build\vector\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Kanak\Desktop\vector2\build\vector\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\Kanak\Desktop\vector\laba4\vector\Main.cpp" />
+    <ClCompile Include="C:\Users\Kanak\Desktop\vector2\vector\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\Kanak\Desktop\vector\laba4\build\ZERO_CHECK.vcxproj">
-      <Project>{193402E3-1C76-360C-8008-079530ED2A69}</Project>
+    <ProjectReference Include="C:\Users\Kanak\Desktop\vector2\build\ZERO_CHECK.vcxproj">
+      <Project>{04FFA233-1855-3F31-9DFD-7679E457CC6A}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\Kanak\Desktop\vector\laba4\build\vectorlib\vectorlib.vcxproj">
-      <Project>{1E7CA6F9-51C2-3462-8815-01C5D50BE5AA}</Project>
+    <ProjectReference Include="C:\Users\Kanak\Desktop\vector2\build\vectorlib\vectorlib.vcxproj">
+      <Project>{ABFB3782-A3AC-32C1-8DBA-0743873669F1}</Project>
       <Name>vectorlib</Name>
     </ProjectReference>
   </ItemGroup>

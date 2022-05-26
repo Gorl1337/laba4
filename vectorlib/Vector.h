@@ -1,249 +1,266 @@
 #pragma once
 #include <iostream>
 
-template<class T>
+template <class T>
 class TVector
 {
-protected:
-	T* data;
-	int len;
-	bool transp;
 public:
-	TVector();
-	TVector(int n, T v);
-	TVector(const TVector<T>& p);
-	~TVector();
+  TVector();
+  TVector(int l, T v);
+  TVector(const TVector<T>& p);
+  ~TVector();
 
-	T* GetData();
+  bool GetTransp();
+  void SetTransp(bool s);
+  void SetLen(int l);
+  int GetLen();
+  void Resize(int l);
 
-	bool GetTransp();
-	void Transp();
-	int GetLen();
-	void SetLen(int l);
-	void Resize(int l);
+  TVector<T> operator +(const TVector<T>& p);
+  TVector<T> operator -(const TVector<T>& p);
+  int operator *(const TVector<T>& p);
+  TVector<T> operator /(const TVector<T>& p);
+  TVector<T>& operator =(const TVector<T>& p);
+  bool operator ==(const TVector<T>& p);
+  T& operator [](int i);
 
-	TVector<T>& operator =(const TVector<T>& p);
-	bool operator==(const TVector<T>& p);
-	TVector<T> operator/(const TVector<T>& p);
-	TVector<T> operator +(const TVector<T>& p);
-	TVector<T> operator -(const TVector<T>& p);
-	TVector<T> operator *(const TVector<T>& p);
-	T& operator[](int i);
+  template <class T>
+  friend std::ostream& operator << (std::ostream& B, TVector<T>& p);
+  template <class T>
+  friend std::istream& operator >> (std::istream& B, TVector<T>& p);
 
+protected:
+  T* data;
+  int len;
+  bool transp;
 };
-
-template<class T>
-std::ostream& operator <<(std::ostream& B, TVector<T>& p)
-{
-	if (p.GetTransp() == false)
-	{
-		for (int i = 0; i < p.GetLen(); i++)
-			B << p[i] << "\t";
-	}
-	else
-	{
-		for (int i = 0; i < p.GetLen(); i++)
-			B << p[i] << std::endl;
-	}
-	B << std::endl;
-	return B;
-}
 
 template<class T>
 inline TVector<T>::TVector()
 {
-	this->transp = false;
-	this->len = 0;
-	this->data = nullptr;
+  this->len = 0;
+  this->data = nullptr;
+  this->transp = false;
 }
 
 template<class T>
-inline T* TVector<T>::GetData()
+inline TVector<T>::TVector(int l, T v)
 {
-	return data;
+  if (l < 1)
+    throw "len < 1";
+  this->transp = false;
+  this->data = new T[l];
+  this->len = l;
+  for (int i = 0; i < len; i++)
+    this->data[i] = v;
 }
 
 template<class T>
-inline TVector<T>::TVector(int n, T v)
+inline TVector<T>::TVector(const TVector<T>& p)
 {
-	if (n < 1)
-		throw "error";
-	this->transp = false;
-	this->data = new T[n];
-	this->len = n;
-	for (int i = 0; i < this->len; i++)
-		this->data[i] = v;
+  if (p.data == nullptr)
+  {
+    this->data = nullptr;
+    this->len = 0;
+    this->transp = false;
+  }
+  else
+  {
+    this->len = p.len;
+    this->transp = false;
+    this->data = new T[len];
+    for (int i = 0; i < this->len; i++)
+      this->data[i] = p.data[i];
+  }
 }
 
 template<class T>
-TVector<T>::TVector(const TVector<T>& p)
+inline TVector<T>::~TVector()
 {
-	this->data = new T[p.len];
-	this->len = p.len;
-	this->transp = false;
-	for (int i = 0; i < len; i++)
-		data[i] = p.data[i];
-}
-
-template<class T>
-TVector<T>::~TVector()
-{
-	if (this->data != nullptr)
-	{
-		delete[]data;
-		data = nullptr;
-	}
-	len = 0;
+  if (this->data != nullptr)
+  {
+    delete[] this->data;
+    this->data = nullptr;
+  }
+  this->len = 0;
 }
 
 template<class T>
 inline bool TVector<T>::GetTransp()
 {
-	return transp;
+  return transp;
 }
 
 template<class T>
-inline void TVector<T>::Transp()
+inline void TVector<T>::SetTransp(bool s)
 {
-	if (transp == false)
-		transp = true;
-	else
-		transp = false;
-}
-
-template<class T>
-int TVector<T>::GetLen()
-{
-	return this->len;
+  this->transp = s;
 }
 
 template<class T>
 inline void TVector<T>::SetLen(int l)
 {
-	this->len = l;
+  this->Resize(l);
+  this->len = l;
 }
 
 template<class T>
-void TVector<T>::Resize(int l)
+inline int TVector<T>::GetLen()
 {
-	if (l < 1)
-		throw "error";
-	T* mas = new T[l];
-	int index = 0;
-	if (this->len >= l)
-	{
-		index = l;
-		for (int i = 0; i < index; i++)
-			mas[i] = this->data[i];
-	}
-	else
-	{
-		index = this->len;
-		for (int i = 0; i < index; i++)
-			mas[i] = this->data[i];
-		for (int i = index; i < this->len; i++)
-			mas[i] = 0;
-	}
-	delete[] this->data;
-	this->data = mas;
-	this->len = l;
+  return len;
 }
 
 template<class T>
-TVector<T>& TVector<T>::operator=(const TVector<T>& p)
+inline void TVector<T>::Resize(int l)
 {
-	this->data = new T[p.len];
-	this->len = p.len;
-	for (int i = 0; i < this->len; i++)
-		this->data[i] = p.data[i];
-	return*this;
+  if (l < 1) 
+    throw "len < 1";
+  T* mas = new T[l];
+  if (this->data != nullptr)
+  {
+    int a = 0;
+    if (this->len > l)
+      a = l;
+    else a = this->len;
+    for (int i = 0; i < a; i++)
+      mas[i] = this->data[i];
+    delete[] this->data;
+  }
+  this->data = mas;
+  this->len = l;
 }
 
 template<class T>
-inline bool TVector<T>::operator==(const TVector<T>& p)
+inline TVector<T> TVector<T>::operator+(const TVector<T>& p)
 {
-	for (int i = 0; i < this->len; i++)
-	{
-		if (this->data[i] != p.data[i])
-			return false;
-	}
-	return true;
-}
-
-template<class T>
-inline TVector<T> TVector<T>::operator/(const TVector<T>& p)
-{
-	TVector<T> res(*this);
-	if (this->len != p.len)
-		throw "error";
-	for (int i = 0; i < this->len; i++)
-	{
-		if (p.data[i] == 0)
-		{
-			res[i] = 0;
-			continue;
-		}
-		res[i] = this->data[i] / p.data[i];
-	}
-	return res;
-}
-
-template<class T>
-TVector<T> TVector<T>::operator+(const TVector<T>& p)
-{
-	TVector<T> res(this->len, 0);
-	if (this->len != p.len)
-		throw "error";
-	for (int i = 0; i < this->len; i++)
-		res[i] = (*this)[i] + p.data[i];
-	return res;
+  if (this->len == 0)
+    throw "len = 0";
+  if (this->len != p.len)
+    throw "len isn't the same";
+  TVector<T> res(this->len, 0);
+  for (int i = 0; i < len; i++)
+    res[i] = this->data[i] + p.data[i];
+  return res;
 }
 
 template<class T>
 inline TVector<T> TVector<T>::operator-(const TVector<T>& p)
 {
-	TVector<T> res(*this);
-	if (this->len != p.len)
-		throw "error";
-	for (int i = 0; i < this->len; i++)
-		res[i] = (*this)[i] - p.data[i];
-	return res;
+  if (this->len == 0)
+    throw "len = 0";
+  if (this->len != p.len) 
+    throw "len isn't the same";
+  TVector<T> res(this->len, 0);
+  for (int i = 0; i < len; i++)
+    res[i] = this->data[i] - p.data[i];
+  return res;
 }
 
 template<class T>
-inline TVector<T> TVector<T>::operator*(const TVector<T>& p)
+int TVector<T>::operator*(const TVector<T>& p)
 {
-	TVector<T> res(1, 0);
-	if (this->len != p.len)
-		throw "error";
-	if (p.transp == true || this->transp == false)
-	{
-		res.data = new T[1];
-		res.len = 1;
-		for (int i = 0; i < this->len; i++)
-		{
-			res.data[0] += (*this)[i] * p.data[i];
-		}
-	}
-	if (p.transp == false || this->transp == true)
-	{
-		/*res.data = new TVector<T>[this->len];
-		for (int i = 0; i < this->len; i++)
-		{
-			for (int j = 0; j < this->len; j++)
-			{
-				res.data[i][j] = (*this)[i] * p.data[j];
-			}
-		}*/
-	}
-	return res;
+  if (this->len == 0) 
+    throw "len = 0";
+  if (this->len != p.len) 
+    throw "len isn't the same";
+  int a = 0;
+  if ((p.transp == true && this->transp == false) || (this->transp == true && p.transp == false))
+  {
+    for (int i = 0; i < this->len; i++)
+    {
+      a += (*this)[i] * p.data[i];
+    }
+  }
+  else
+    throw "Error: one vector must be transposed";
+  return a;
+}
+
+template<class T>
+inline TVector<T> TVector<T>::operator/(const TVector<T>& p)
+{
+  if (this->len == 0) 
+    throw "len = 0";
+  if (this->len != p.len) 
+    throw "len isn't the same";
+  TVector<T> A(this->len, 0);
+  for (int i = 0; i < this->len; i++)
+  {
+    if (p.data[i] == 0)
+      A[i] = 0;
+    else
+      A[i] = this->data[i] / p.data[i];
+  }
+  return A;
+}
+
+template<class T>
+inline TVector<T>& TVector<T>::operator=(const TVector<T>& p)
+{
+  if (this == &p) 
+    return *this;
+  if (this->data != nullptr) 
+    delete[] this->data;
+  if (p.data == nullptr)
+  {
+    this->len = 0;
+    this->data = nullptr;
+  }
+  else
+  {
+    this->len = p.len;
+    this->data = new T[len];
+    for (int i = 0; i < this->len; i++)
+      this->data[i] = p.data[i];
+  }
+  return *this;
+}
+
+template<class T>
+inline bool TVector<T>::operator==(const TVector<T>& p)
+{
+  if (this->len != p.len) 
+    return false;
+  for (int i = 0; i < this->len; i++)
+  {
+    if (this->data[i] != p.data[i])
+      return false;
+  }
+  return true;
 }
 
 template<class T>
 inline T& TVector<T>::operator[](int i)
 {
-	if (i < 0)
-		throw "error";
-	return data[i];
+  if (data == nullptr)
+    throw "data = 0";
+  if (i < 0 || i >= len)
+    throw "i is out of range";
+  return data[i];
 }
 
+template<class T>
+inline std::ostream& operator<<(std::ostream& B, TVector<T>& p)
+{
+  if (p.GetTransp() == false)
+  {
+    for (int i = 0; i < p.GetLen(); i++)
+      B << p[i] << "  ";
+  }
+  else
+  {
+    for (int i = 0; i < p.GetLen(); i++)
+      B << p[i] << std::endl;
+  }
+  B << std::endl;
+  return B;
+}
+
+template<class T>
+inline std::istream& operator>>(std::istream& B, TVector<T>& p)
+{
+  std::cout << "Print vector" << ", size = " << p.len << std::endl;
+  for (int i = 0; i < p.len; i++)
+    B >> p[i];
+  return B;
+}
